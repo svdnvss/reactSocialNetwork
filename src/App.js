@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
 import Header from "./components/Header/Header";
@@ -19,10 +20,9 @@ const App = (props) => {
                     <Header/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
-                        <Route path='/profile' render={ () => <Profile posts={props.posts}/>} />
+                        <Route path='/profile' component={Profile}/>
                         <Route path='/news' component={News}/>
-                        <Route path='/messages' render={ () => <Messages dialogues={props.dialogues}
-                                                                         messages={props.messages} />} />
+                        <Route path='/messages' component={Messages}/>
                         <Route path='/music' component={Music}/>
                         <Route path='/stories' component={Stories}/>
                         <Route path='/bookmarks' component={Bookmarks}/>
