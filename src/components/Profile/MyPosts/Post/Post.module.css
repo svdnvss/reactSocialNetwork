@@ -1,0 +1,12 @@
+.item {
+    margin-left: 50px;
+    margin-top: 30px;
+    color: #2b2b2b
+}
+
+.item img {
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
