@@ -1,4 +1,4 @@
-import s from './../Messages.module.css'
+import s from './DialogueItem.module.css'
 import {NavLink} from "react-router-dom";
 
 const DialogueItem = (props) => {
@@ -6,7 +6,10 @@ const DialogueItem = (props) => {
 
     return (
         <div className={s.dialogue + ' ' + s.active}>
-            <NavLink to={path}>{props.name}</NavLink>
+            <NavLink to={path}>
+                <img src="https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg"/>
+                {props.name}
+            </NavLink>
         </div>
     )
 }

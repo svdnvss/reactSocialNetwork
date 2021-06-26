@@ -1,0 +1,11 @@
+.friend img {
+    margin: auto 15px;
+    padding-right: 5px;
+    width: 50px;
+    border-radius: 30px;
+}
+
+.friend h3 {
+    color: white;
+    margin: auto 4px;
+}

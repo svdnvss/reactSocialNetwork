@@ -9,6 +9,7 @@ import Bookmarks from "./components/Bookmarks/Bookmarks";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Stories from "./components/Stories/Stories";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 
 const App = (props) => {
@@ -17,16 +18,24 @@ const App = (props) => {
             <div className='app-wrapper-background'>
                 <div className='app-wrapper'>
                     <Header/>
-                    <Navbar/>
+                    <div className='app-wrapper-side'>
+                        <Navbar/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <Sidebar/>
+                    </div>
                     <div className='app-wrapper-content'>
-                        <Route path='/profile' render={ () => <Profile posts={props.posts}/>} />
-                        <Route path='/news' component={News}/>
-                        <Route path='/messages' render={ () => <Messages dialogues={props.dialogues}
-                                                                         messages={props.messages} />} />
-                        <Route path='/music' component={Music}/>
-                        <Route path='/stories' component={Stories}/>
-                        <Route path='/bookmarks' component={Bookmarks}/>
-                        <Route path='/settings' component={Settings}/>
+                        <Route path='/profile' render={() =>
+                            <Profile posts={props.state.profilePage.posts}/>}/>
+                        <Route path='/news' render={() => <News/>}/>
+                        <Route path='/messages' render={() =>
+                            <Messages dialogues={props.state.messagesPage.dialogues}
+                                      messages={props.state.messagesPage.messages}/>}/>
+                        <Route path='/music' render={() => <Music/>}/>
+                        <Route path='/stories' render={() => <Stories/>}/>
+                        <Route path='/bookmarks' render={() => <Bookmarks/>}/>
+                        <Route path='/settings' render={() => <Settings/>}/>
                     </div>
                 </div>
             </div>

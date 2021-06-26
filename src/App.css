@@ -19,6 +19,11 @@
     background: #e1e1e1;
 }
 
+.app-wrapper-side {
+    height: 100vh;
+    background-color: dimgray;
+    grid-template-rows: 8fr 5fr;
+}
 
 
 

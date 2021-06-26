@@ -1,0 +1,24 @@
+.dialogue {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.dialogue a {
+    text-decoration: none;
+    color: #2b2b2b;
+}
+
+.dialoguesItems .active {
+    padding-top: 5px;
+    color: red;
+}
+
+.message {
+    padding-top: 5px;
+}
+
+.dialogue img {
+    padding-right: 5px;
+    width: 50px;
+    border-radius: 30px;
+}

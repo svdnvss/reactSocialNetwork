@@ -1,5 +1,5 @@
-.nav {
-    grid-area: n;
+.side {
+    grid-area: s;
     background-color: dimgray;
     font-size: larger;
 }
@@ -11,5 +11,11 @@
 }
 
 .item a.active {
+    color: #2b2b2b;
+}
+
+.side h1 {
+    font-size: 45px;
     color: wheat;
+    padding-left: 20px;
 }
