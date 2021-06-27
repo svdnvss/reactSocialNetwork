@@ -2,18 +2,12 @@ import s from './SidebarItems.module.css'
 import {NavLink} from "react-router-dom";
 import SidebarFriend from "./SidebarFriend/SidebarFriend";
 
-const SidebarItems = () => {
+const SidebarItems = (props) => {
+    let sideFriend =
+        props.friends.map(f => <SidebarFriend name={f.name} />)
     return (
         <nav className={s.sideItems}>
-            <div className={s.item}>
-                <SidebarFriend name='Evelina' />
-            </div>
-            <div className={s.item}>
-                <SidebarFriend name='Izyum'/>
-            </div>
-            <div className={s.item}>
-                <SidebarFriend name='Barsik'/>
-            </div>
+            { sideFriend }
         </nav>
     )
 }
