@@ -1,3 +1,7 @@
+import messageReducer from "./messagesReducer";
+import profileReducer from "./profileReducer";
+import sidebarReducer from "./sidebarReducer";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
@@ -54,30 +58,12 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: (this._state.profilePage.posts.length + 1),
-                message: this._state.profilePage.postText,
-                likesCount: 0
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.postText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.postText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.messagesPage.newMessageBody = action.newBody;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let newMessage = {
-                id: (this._state.messagesPage.messages.length + 1),
-                text: this._state.messagesPage.newMessageBody
-            }
-            this._state.messagesPage.messages.push(newMessage);
-            this._state.messagesPage.newMessageBody = '';
-            this._callSubscriber(this._state);
-        }
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action)
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
+
+        this._callSubscriber(this._state);
+
     }
 }
 

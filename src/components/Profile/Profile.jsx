@@ -2,8 +2,9 @@ import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
-    let posts = props.posts
-    let postText = props.postText
+    let state = props.store.getState().profilePage;
+    let posts = state.posts;
+    let postText = state.postText;
 
     return (
         <div>

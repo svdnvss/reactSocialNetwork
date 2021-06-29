@@ -6,13 +6,15 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/state
 
 const Messages = (props) => {
 
+    let state = props.store.getState().messagesPage;
+
     let dialoguesElements =
-        props.state.dialogues.map(d => <DialogueItem name={d.name} id={d.id}/>)
+        state.dialogues.map(d => <DialogueItem name={d.name} id={d.id}/>)
 
     let messagesElements =
-        props.state.messages.map(m => <Message message={m.text}/>)
+        state.messages.map(m => <Message message={m.text}/>)
 
-    let newMessageBody = props.state.newMessageBody;
+    let newMessageBody = state.newMessageBody;
 
     let messageLink = React.createRef();
 

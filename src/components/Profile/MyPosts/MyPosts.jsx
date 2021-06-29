@@ -4,7 +4,6 @@ import React from 'react';
 import {addPostCreator, updateNewPostTextCreator} from "../../../redux/state";
 
 const MyPosts = (props) => {
-
     let postsElements =
         props.posts.slice(0).reverse().map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
