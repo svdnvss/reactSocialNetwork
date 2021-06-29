@@ -3,12 +3,14 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
     let posts = props.posts
+    let postText = props.postText
+
     return (
         <div>
             {console.log(props)}
             <ProfileInfo/>
             <MyPosts posts={posts}
-                     postText={props.postText}
+                     postText={postText}
                      dispatch={props.dispatch}/>
         </div>
     )
