@@ -1,12 +1,11 @@
 import s from './Messages.module.css'
+import React from 'react';
 import DialogueItem from "./DialogueItem/DialogueItem";
 import Message from "./Message/Message";
-import React from 'react';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/messagesReducer";
 
 const Messages = (props) => {
 
-    let state = props.store.getState().messagesPage;
+    let state = props.messagesPage
 
     let dialoguesElements =
         state.dialogues.map(d => <DialogueItem name={d.name} id={d.id}/>)
@@ -20,11 +19,11 @@ const Messages = (props) => {
 
     let onMessageChange = (e) => {
         let messageBody = e.target.value;
-        props.dispatch(updateNewMessageBodyCreator(messageBody));
+        props.onMessageChange(messageBody);
     }
 
     let sendMessage = () => {
-        props.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
 
     return (

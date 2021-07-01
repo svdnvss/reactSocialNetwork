@@ -1,18 +1,12 @@
-import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
-    let state = props.store.getState().profilePage;
-    let posts = state.posts;
-    let postText = state.postText;
-
     return (
         <div>
             {console.log(props)}
             <ProfileInfo/>
-            <MyPosts posts={posts}
-                     postText={postText}
-                     dispatch={props.dispatch}/>
+            <MyPostsContainer store={props.store} />
         </div>
     )
 }
