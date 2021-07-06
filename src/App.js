@@ -19,14 +19,14 @@ const App = (props) => {
                 <Header/>
                 <div className='app-wrapper-side'>
                     <Navbar/>
-                    <Sidebar store={props.store}/>
+                    {/*<Sidebar/>*/}
                 </div>
                 <div className='app-wrapper-content'>
                     <Route path='/profile'
-                           render={() => <Profile store={props.store} />}/>
+                           render={() => <Profile/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/messages'
-                           render={() => <MessagesContainer store={props.store} />}/>
+                           render={() => <MessagesContainer/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/stories' render={() => <Stories/>}/>
                     <Route path='/bookmarks' render={() => <Bookmarks/>}/>

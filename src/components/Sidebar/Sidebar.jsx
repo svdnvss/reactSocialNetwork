@@ -1,9 +1,8 @@
 import s from './Sidebar.module.css'
-import {NavLink} from "react-router-dom";
 import SidebarItems from "./SidebarItems/SidebarItems";
 
 const Sidebar = (props) => {
-    let state = props.store.getState().sidebar;
+    let state = props.sidebar;
 
     return (
         <nav className={s.side}>
