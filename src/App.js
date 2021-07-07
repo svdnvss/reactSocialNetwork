@@ -10,6 +10,7 @@ import Settings from "./components/Settings/Settings";
 import Stories from "./components/Stories/Stories";
 import Sidebar from "./components/Sidebar/Sidebar";
 import MessagesContainer from "./components/Messages/MessagesContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 const App = (props) => {
@@ -31,6 +32,7 @@ const App = (props) => {
                     <Route path='/stories' render={() => <Stories/>}/>
                     <Route path='/bookmarks' render={() => <Bookmarks/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
+                    <Route path='/users' render={() => <UsersContainer/>}/>
                 </div>
             </div>
         </div>

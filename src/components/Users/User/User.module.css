@@ -1,0 +1,30 @@
+.users {
+    padding: 50px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}
+
+.item img {
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+.right {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+}
+.butt {
+    display: grid;
+
+}
+
+.butt button {
+    margin-left: 30px;
+    width: 100px;
+    background: #2b2b2b;
+    color: white;
+}
