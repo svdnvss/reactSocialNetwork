@@ -5,15 +5,15 @@ import userPhoto from '../../assets/images/2_cat.webp'
 
 class Users extends React.Component {
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.totalUsersCount}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
             this.props.setUsers(response.data.items)
-            //this.props.setUsersCount(response.data.totalCount)
+            this.props.setUsersCount(response.data.totalCount)
         })
     }
 
     onPageChoosing = (p) => {
         this.props.setCurrentPage(p);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.totalUsersCount}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
             });
@@ -29,12 +29,15 @@ class Users extends React.Component {
         console.log(pages)
         debugger
         return <div>
-            <div>
-                {pages.map(p => {
-                    return <span onClick={(e) => {
-                        this.onPageChoosing(p)
-                    }} className={this.props.currentPage === p && styles.selectedPage}>{p} </span>
-                })}
+            <div className={styles.pageNumbers}>
+                <br/>
+                <div>
+                    {pages.map(p => {
+                        return <span onClick={(e) => {
+                            this.onPageChoosing(p)
+                        }} className={this.props.currentPage === p && styles.selectedPage}>{p} </span>
+                    })}
+                </div>
             </div>
 
             {

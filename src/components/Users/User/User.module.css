@@ -32,3 +32,11 @@
 .selectedPage {
     font-weight: bold;
 }
+
+.pageNumbers {
+    font-size: 15px;
+    user-select: none;
+    display: grid;
+    width: 1200px;
+    margin: auto;
+}
