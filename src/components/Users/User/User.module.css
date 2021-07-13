@@ -30,13 +30,50 @@
 }
 
 .selectedPage {
-    font-weight: bold;
+    font-weight: bolder;
+    background: #630003;
+    color: wheat;
 }
 
 .pageNumbers {
-    font-size: 15px;
+    display: grid;
+    width: 1330px;
+}
+
+/*.pageNumbers {
+    font-size: 20px;
     user-select: none;
     display: grid;
-    width: 1200px;
+    width: 900px;
     margin: auto;
+}*/
+
+table {
+    user-select: none;
+    font-size: 18px;
+    display: table;
+    width: 100%;
+    table-layout: fixed
+}
+
+tr {
+    text-align: center;
+}
+
+td {
+    font-weight: bold;
+    text-align: center;
+    background: darkgrey;
+    margin: auto;
+    width: 15px;
+    border-radius: 15px;
+}
+
+th, td {
+    padding: 4px 5px;
+}
+
+.arrows {
+    background: #2b2b2b;
+    color: wheat;
 }
