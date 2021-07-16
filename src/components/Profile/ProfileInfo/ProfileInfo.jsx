@@ -1,6 +1,5 @@
 import s from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
-import {NavLink} from "react-router-dom";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -12,7 +11,7 @@ const ProfileInfo = (props) => {
                 <img src="http://pm1.narvii.com/6857/d1562e40a2f1d498db066cb792e842e1de58c9b2_00.jpg"/>
             </div>
             <div className={s.descriptionBlock}>
-                <div>
+                <div className={s.profilePhoto}>
                     {props.profile.photos.large === null ? <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/>
                     :                    <img src={props.profile.photos.large}/>}
                 </div>

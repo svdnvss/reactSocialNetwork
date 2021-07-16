@@ -14,8 +14,14 @@
     grid-template-columns: 3fr 7fr;
 }
 
-.descriptionBlock img {
+.profilePhoto {
+    display: flex;
+}
+
+.profilePhoto img {
+    margin: auto;
     width: 375px;
+    height: 375px;
 }
 
 .profileInfo {
