@@ -1,22 +1,18 @@
 import React from 'react';
 import styles from './User/User.module.css';
 import userPhoto from '../../assets/images/2_cat.webp';
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 
     let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    }
-    let newPages = [];
     const setNewPages = (t) => {
-        newPages = [];
+        pages = [];
         let temp = t * 10 + 1;
         for (let i = temp; i <= (temp + 19); i++) {
-            newPages.push(i);
-            console.log(newPages)
+            pages.push(i);
         }
     }
     setNewPages(props.usersTen);
@@ -26,34 +22,29 @@ const Users = (props) => {
         <div className={styles.pageNumbers}>
             <br/>
             <div>
-{/*                {pages.map(p => {
-                    return <span onClick={(e) => {
-                        props.onPageChoosing(p)
-                    }} className={props.currentPage === p && styles.selectedPage}>{p} </span>
-                })}*/}
                 <table>
-                <tr>
-                <td className={styles.arrows} onClick={(e) => {
-                    props.setUsersTen(0)
-                }}>&#8810; </td>
-                <td className={styles.arrows} onClick={(e) => {
-                    props.setUsersTen(-1);
-                }}>&#60; </td>
+                    <tr>
+                        <td className={styles.arrows} onClick={(e) => {
+                            props.setUsersTen(0)
+                        }}>&#8810; </td>
+                        <td className={styles.arrows} onClick={(e) => {
+                            props.setUsersTen(-1);
+                        }}>&#60; </td>
 
-                    {newPages.map(p => {
-                        return <td onClick={(e) => {
-                            props.onPageChoosing(p);
-                        }} className={props.currentPage === p && styles.selectedPage}>{p} </td>
-                    })}
+                        {pages.map(p => {
+                            return <td onClick={(e) => {
+                                props.onPageChoosing(p);
+                            }} className={props.currentPage === p && styles.selectedPage}>{p} </td>
+                        })}
 
 
-                <td className={styles.arrows} onClick={(e) => {
-                    props.setUsersTen(1);
-                }}>&#62; </td>
-                <td className={styles.arrows} onClick={(e) => {
-                    props.setUsersTen(11)
-                }}>&#8811;</td>
-                </tr>
+                        <td className={styles.arrows} onClick={(e) => {
+                            props.setUsersTen(1);
+                        }}>&#62; </td>
+                        <td className={styles.arrows} onClick={(e) => {
+                            props.setUsersTen(11)
+                        }}>&#8811;</td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -63,16 +54,19 @@ const Users = (props) => {
                 <div className={styles.item}>
                     <div className={styles.left}>
                         <div>
-                            <img
-                                src={u.photos.small != null ? u.photos.small : userPhoto}/>
+                            <NavLink to={'/profile/' + u.id}>
+                                <img
+                                    src={u.photos.small != null ? u.photos.small : userPhoto}/>
+                            </NavLink>
+
                         </div>
                         <div className={styles.butt}>
                             {u.followed
                                 ? <button onClick={() => {
-                                    props.unfollowIt(u.id)
+                                    props.unfollow(u.id)
                                 }}>Unfollow</button>
                                 : <button onClick={() => {
-                                    props.followIt(u.id)
+                                    props.follow(u.id)
                                 }}>Follow</button>}
                         </div>
                     </div>

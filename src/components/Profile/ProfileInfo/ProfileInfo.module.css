@@ -1,8 +1,41 @@
+.mainDiv {
+
+}
+
 .image img {
     width: 1330px;
     height: 400px;
 }
 
 .descriptionBlock {
+    height: 450px;
+    display: grid;
     padding: 10px;
+    grid-template-columns: 3fr 7fr;
+}
+
+.descriptionBlock img {
+    width: 375px;
+}
+
+.profileInfo {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+.mainInfo h1 {
+    font-size: 50px;
+}
+
+.mainInfo img {
+    width: 40px;
+    height: 30px;
+}
+
+.contacts img {
+    width: 30px;
+}
+
+.contacts p {
+    font-size: 15px;
 }
