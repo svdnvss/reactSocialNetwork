@@ -1,6 +1,5 @@
 import './App.css';
 import {Route} from 'react-router-dom';
-import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Bookmarks from './components/Bookmarks/Bookmarks';
@@ -11,13 +10,14 @@ import Sidebar from './components/Sidebar/Sidebar';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 const App = (props) => {
     return (
         <div className='app-wrapper-background'>
             <div className='app-wrapper'>
-                <Header/>
+                <HeaderContainer/>
                 <div className='app-wrapper-side'>
                     <Navbar/>
                     {/*<Sidebar/>*/}

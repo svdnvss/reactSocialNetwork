@@ -33,8 +33,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-let WithRouteProfilePageContainer = withRouter(ProfileContainer)
+let WithRouterProfilePageContainer = withRouter(ProfileContainer)
 
 export default connect(mapStateToProps, {
     setUserProfile
-})(WithRouteProfilePageContainer);
+})(WithRouterProfilePageContainer);
