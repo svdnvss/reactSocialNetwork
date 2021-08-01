@@ -1,10 +1,8 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {setUserProfile} from "../../redux/profileReducer";
+import {getUserProfile} from "../../redux/profileReducer";
 import {withRouter} from "react-router-dom";
-import {profileAPI} from "../../api/api";
-
 
 class ProfileContainer extends React.Component {
 
@@ -14,9 +12,8 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = 18383;
         }
-        profileAPI.setUserProfile(userId).then(response => {
-                this.props.setUserProfile(response);
-            })
+
+        this.props.getUserProfile(userId);
 
     }
 
@@ -34,5 +31,5 @@ const mapStateToProps = (state) => {
 let WithRouterProfilePageContainer = withRouter(ProfileContainer)
 
 export default connect(mapStateToProps, {
-    setUserProfile
+    getUserProfile
 })(WithRouterProfilePageContainer);

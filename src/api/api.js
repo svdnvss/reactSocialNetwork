@@ -40,32 +40,12 @@ export const profileAPI = {
         )
     }
 }
-/*
 
-export const getUsersApi = (currentPage, pageSize) => {
-    return (
-        instance.get(`users?page=${currentPage}&count=${pageSize}`)
-            .then(response => response.data)
-    )
+export const headerAPI = {
+    getAuth() {
+        return(
+            instance.get(`auth/me`)
+                .then(response => response.data)
+        )
+    }
 }
-
-export const followApi = (id) => {
-    return(
-        instance.post(`follow/${id}`)
-            .then(response => response.data.resultCode)
-    )
-}
-
-export const unfollowApi = (id) => {
-    return(
-        instance.delete(`follow/${id}`)
-            .then(response => response.data.resultCode)
-    )
-}
-
-export const setUserProfileApi = (id) => {
-    return(
-        instance.get(`profile/${id}`)
-            .then(response => response.data)
-    )
-}*/
