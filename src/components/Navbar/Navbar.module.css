@@ -13,3 +13,10 @@
 .item a.active {
     color: wheat;
 }
+
+.item p {
+    font-size: medium;
+    padding-left: 30px;
+    text-decoration: none;
+    color: fuchsia;
+}

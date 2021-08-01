@@ -11,6 +11,7 @@ import MessagesContainer from './components/Messages/MessagesContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import PopIt from './components/PopIt/PopIt';
 
 
 const App = (props) => {
@@ -33,6 +34,7 @@ const App = (props) => {
                     <Route path='/bookmarks' render={() => <Bookmarks/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
                     <Route path='/users' render={() => <UsersContainer/>}/>
+                    <Route path='/popit' render={() => <PopIt/>}/>
                 </div>
             </div>
         </div>

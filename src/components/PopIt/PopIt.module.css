@@ -1,0 +1,15 @@
+.main {
+    display: grid;
+    margin: auto;
+    height: 95vh;
+}
+
+
+.main table {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    background-image: url('../../assets/popIt/popit.png');
+    background-size: 600px;
+}
