@@ -1,4 +1,4 @@
-import {headerAPI} from "../api/api";
+import {authAPI} from "../api/api";
 
 const SET_USER_AUTH_DATA = 'SET_USER_AUTH_DATA';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
@@ -35,11 +35,14 @@ export const makeAuth = () => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
 
-        headerAPI.getAuth()
+        authAPI.getAuth()
             .then(response => {
+                debugger
                 dispatch(toggleIsFetching(false));
-                let {id, email, login} = response.data;
-                dispatch(setUserAuthData(id, email, login));
+                if (response.resultCode === 0) {
+                    let {id, email, login} = response.data;
+                    dispatch(setUserAuthData(id, email, login));
+                }
             })
     }
 }
