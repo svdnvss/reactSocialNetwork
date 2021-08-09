@@ -37,7 +37,6 @@ export const makeAuth = () => {
 
         authAPI.getAuth()
             .then(response => {
-                debugger
                 dispatch(toggleIsFetching(false));
                 if (response.resultCode === 0) {
                     let {id, email, login} = response.data;

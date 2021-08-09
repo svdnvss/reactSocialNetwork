@@ -1,5 +1,6 @@
-import s from "./ProfileInfo.module.css";
-import Preloader from "../../common/Preloader/Preloader";
+import s from './ProfileInfo.module.css';
+import Preloader from '../../common/Preloader/Preloader';
+import ProfileStatus from './ProfileStatus/ProfileStatus'
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -7,9 +8,9 @@ const ProfileInfo = (props) => {
     }
     return (
         <div className={s.mainDiv}>
-            <div className={s.image}>
+            {/*<div className={s.image}>
                 <img src="http://pm1.narvii.com/6857/d1562e40a2f1d498db066cb792e842e1de58c9b2_00.jpg"/>
-            </div>
+            </div>*/}
             <div className={s.descriptionBlock}>
                 <div className={s.profilePhoto}>
                     {props.profile.photos.large === null ? <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/>
@@ -18,6 +19,7 @@ const ProfileInfo = (props) => {
                 <div className={s.profileInfo}>
                     <div className={s.mainInfo}>
                         <h1>&nbsp; {props.profile.fullName}</h1>
+                        <ProfileStatus status={'hiiii'}/>
                         <h3>&nbsp; {props.profile.aboutMe}</h3>
                         {props.profile.lookingForAJob === true
                             ? <h4   >&nbsp; Needs job: <img src="https://static.vecteezy.com/system/resources/previews/001/200/261/original/check-png.png"/></h4>
